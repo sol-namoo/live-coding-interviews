@@ -1,0 +1,24 @@
+{
+  "name": "live-coding-interviews",
+  "version": "1.0.0",
+  "description": "기업 면접 라이브 코딩 문제를 정리하는 TypeScript 기반 레포지토리",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node problems/example.ts",
+    "build": "tsc -p ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^25.3.5",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "react": "^19.2.4"
+  }
+}
