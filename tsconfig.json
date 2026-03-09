@@ -12,5 +12,5 @@
     "outDir": "dist",
     "resolveJsonModule": true
   },
-  "include": ["problems/**/*"]
+  "include": ["problems/**/*", "problems/2026-03-08-C-1-Frontend_Engineer/solution.tsx"]
 }
