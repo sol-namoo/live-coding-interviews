@@ -45,7 +45,7 @@
    코드가 “주문 편집 UI”인지, orderId와 Save가 각각 뭘 의미하는지가 안 적혀 있어서, “Save가 orderId를 저장하는 건가, fulfilled를 저장하는 건가”부터 헷갈렸다.
 
 2. **fulfilled state의 역할이 코드만으로는 안 읽힘**  
-   `order` 안에 이미 `lines[].fulfilled`가 있어서 “derived data 아니야?”라고 느껴졌고, “왜 별도 state를 두고 setFulfilled를 쓰지?”가 이해되지 않았다. (실제로는 “편집 중인 값” draft용 state.)
+   `order` 안에 이미 `lines[].fulfilled`가 있어서 “derived data 아니야?”라고 느껴졌고, “왜 별도 state를 두고 setFulfilled를 쓰지?”가 이해되지 않았다. 실제로는 “UI에서 편집된 값”만을 저장해 두기 위한 state로서 존재했고, 제출 시 변경된 부분만 덮어씌우는 패턴이라는 것을 나중에 이해했다.
 
 3. **Save 버튼과 orderId가 같은 줄에 있어서**  
    “orderId를 저장하는 버튼”으로 오해하기 쉬웠다. Save는 “현재 주문의 fulfilled 수량을 서버에 저장”하는 용도인데, 라벨/설명이 없어서 의도 파악이 어려웠다.
@@ -86,7 +86,7 @@
 - **다음에 비슷한 “버그 찾기” 문제가 나오면**  
    - (1) 렌더/폼: key, controlled/uncontrolled input, value vs defaultValue  
    - (2) effect: dependency array  
-   - (3) state: 불변 업데이트, mutate 금지  
+   - (3) state: 불변 업데이트, 직접 mutate 금지  
    - (4) 계산: 0/falsy 처리 (`||` vs `??`)  
    - (5) 분기: early return, setState 중복/순서  
   순서로 체크리스트를 두고 훑으면 놓치는 걸 줄일 수 있을 것 같다.
